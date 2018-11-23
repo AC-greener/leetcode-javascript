@@ -55,6 +55,23 @@ function ArrayList(){
       }
     }
   }
+
+  var countSort = function(arr) {
+    var i = 0,
+        length = arr.length,
+        hash = {}
+    while(i < length) {
+      if(hash[arr[i]] === undefined) {
+        hash[arr[i]] = 1
+      } else {
+        hash[arr[i]]++
+      }
+      i++
+    }
+    console.log(hash)
+    return hash
+  }
+  countSort([1,2,2,6,1,7,2])
 }
 
 
