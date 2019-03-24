@@ -15,7 +15,7 @@
 你不需要考虑数组中超出新长度后面的元素。
 */
 
-
+//第一种
 var removeElement = function(nums, val) {
   var len = nums.length
   for(var i = 0; i < len; ) {
@@ -51,3 +51,15 @@ var removeElement2 = function(nums, val) {
 // removeElement([3, 3], 3)
 removeElement2([1,0,2,1,3,2], 2)
 removeElement2([3, 3], 3)
+
+function Parent() {
+  this.name = 'parent'
+}
+
+var a = new Parent()
+
+var person = {
+  name: 'zhansgan',
+  '': 1212,
+  self: person
+}
