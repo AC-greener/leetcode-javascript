@@ -12,6 +12,60 @@
   <!-- <script src="./sum.js"></script> -->
   <!-- <script src="./电话号码组合.js"></script> -->
   <!-- <script src="./卡牌分组.js"></script> -->
-  <script src="./js-algorithm/Sort.js"></script>
+  <!-- <script src="./js-algorithm/Sort.js"></script> -->
+  <script src="./格林编码.js"></script>
+  <script>
+    function Tree() {
+      var root = null
+      var Node = function(key) {
+        this.key = key
+        this.left = null
+        this.right = null
+      }
+      var preOrder = function(root, callback) {
+        var node = root
+        if(node) {
+          callback(node.key)
+          preOrder(node.left, callback)
+          preOrder(node.right, callback)
+        }
+      }
+      var preOrder2 = function(root, callback) {
+        var node = root, stack = []
+        if(node) {
+          stack.push(node)
+          while(stack.length > 0) {
+            node = stack.pop()
+            callback(node)
+            if(node.right) stack.push(node.right)
+            if(node.left) stack.push(node.left)
+          }
+        }
+      }
+      var inOrder = function(root, callback) {
+        var node = root
+        if(node) {
+          preOrder(node.left, callback)
+          callback(node.key)
+          preOrder(node.right, callback)
+        }
+      }
+      var inOrder2 = function(root, callback) {
+        var node = root, stack = []
+        if(node) {
+          while(stack.length > 0 || node) { //如果栈不为空或结点不为空，则循环遍历
+            if(node) {   
+              stack.push(node) 
+              node = node.left //将左子树作为当前结点
+            } else {  //没有左子树，则开始出栈，遍历右子树
+              node = stack.pop()
+              callback(node.key)
+              node = node.right //将右结点作为当前结点
+            }
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
