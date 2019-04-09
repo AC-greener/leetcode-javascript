@@ -57,9 +57,7 @@ function ArrayList() {
   }
 
   //插入排序
-  /*归并排序是一种分治算法。其思想是将原始数组切分成较小的数组，直到每个小数组只有一
-  个位置，接着将小数组归并成较大的数组，直到最后只有一个排序完毕的大数组。
-  */
+  
   this.insertionSort = function () {
     var length = array.length, //{1}
       j, temp;
@@ -75,6 +73,9 @@ function ArrayList() {
   };
 
   //归并排序
+  /*归并排序是一种分治算法。其思想是将原始数组切分成较小的数组，直到每个小数组只有一
+  个位置，接着将小数组归并成较大的数组，直到最后只有一个排序完毕的大数组。
+  */
   this.mergeSort = function () {
     array = mergeSortRec(array);
   };
