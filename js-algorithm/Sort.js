@@ -57,7 +57,6 @@ function ArrayList() {
   }
 
   //插入排序
-  
   this.insertionSort = function () {
     var length = array.length, //{1}
       j, temp;
