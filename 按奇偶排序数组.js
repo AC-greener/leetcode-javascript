@@ -46,7 +46,5 @@ function partition(array, left, right) {
   }
   return i
 }
-// var xxx = [2, 3, 1, 0, 9, 9, 8]
 
-// quickSort(xxx, 0, 6)
 sortArrayByParityII([4,2,5,7])
