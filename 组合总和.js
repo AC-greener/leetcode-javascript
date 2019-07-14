@@ -22,10 +22,9 @@ function fn(target, candidates, resultItem, start) {
   if(sum === target) {
     //resultItem是引用类型result.push(resultItem是错误的)
     result.push([].concat(resultItem))
-    console.log(result)
     return 
   }
-
+  
   for(var i = start; i < candidates.length; i++) {
     if(sum + candidates[i] <= target) {
       resultItem.push(candidates[i])

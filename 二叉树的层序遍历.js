@@ -9,31 +9,31 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function(root) {
-
-  if(root === null || root.length === 0){
+var levelOrder = function (root) {
+  if (root === null) {
     return [];
   }
-    //创建队列并把起始节点入队(第一层)
-    let queue = [], result = []
-    queue.push(root)
-    while(queue.length !== 0) {
-      //从上一层节点拓展到下一层
-      let level = []  //保存当前层过结果
-      let size = queue.length
-      for(let i = 0; i < size; i++) {
-        node = queue.shift()
-        level.push(node.val)
-        if(node.left) {
-          queue.push(node.left)
-        }
-        if(node.right) {
-          queue.push(node.right)
-        }
+  //创建队列并把起始节点入队(第一层)
+  let queue = [],
+    result = []
+  queue.push(root)
+  while (queue.length !== 0) {
+    //从上一层节点拓展到下一层
+    let level = [] //保存当前层过结果
+    let size = queue.length //当前层的size
+    for (let i = 0; i < size; i++) {
+      node = queue.shift()
+      level.push(node.val)
+      if (node.left) {
+        queue.push(node.left)
       }
-      result.push(level)
+      if (node.right) {
+        queue.push(node.right)
+      }
     }
-    return result
+    result.push(level)
+  }
+  return result
 };
 
 

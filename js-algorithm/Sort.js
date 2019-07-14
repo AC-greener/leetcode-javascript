@@ -17,11 +17,11 @@ function ArrayList() {
   }
   //冒泡排序，主要思想，从数组的第一项开始依次与下一项作比较，如果后者大于前者，则交换两元素位置
   this.bubbleSort = function () {
-    var length = array.length;
+    var length = array.length
     for (var i = 0; i < length; i++) {
-      for (var j = 0; j < length - 1; j++) {
+      for (var j = 0; j < length - 1 - i; j++) {
         if (array[j] > array[j + 1]) {
-          swap(array, j, j + 1);
+          swap(j, j + 1);
         }
       }
     }
@@ -132,8 +132,10 @@ var swap = function (array, index1, index2) {
 }
 
 //快速排序
-function quickSort(array, left, right) {
-  var index
+function quickSort(array) {
+  let left = 0, 
+    right = array.length - 1
+    index
 
   if (array.length > 1) {
     //index 将数组划分成较小值的数组和较大值的数组
@@ -159,7 +161,7 @@ function partition(array, left, right) {
       j--
     }
     if (i <= j) {
-      swap(array, i, j)
+      array[array[i] ,array[j]] = array[array[j] ,array[i]]
       i++
       j--
     }
