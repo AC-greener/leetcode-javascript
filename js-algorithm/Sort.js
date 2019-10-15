@@ -171,5 +171,3 @@ function partition(array, left, right) {
 var xxx = [2, 3, 1, 0, 9, 9, 8]
 
 quickSort(xxx, 0, 6)
-
-console.log(xxx)
